@@ -1,15 +1,15 @@
 {
-    "include": ["src/**/*"],
+    "include": ["./*.ts"],
     "exclude": ["build"],
     "compilerOptions": {
       "target": "es2016",
       "module": "commonjs",
-      "rootDir": "src",                                  
+      "rootDir": "./",                                  
       "moduleResolution": "node",                       
       "typeRoots": ["node_modules/@types", "node_modules/types"],                                 
       "types": ["node"],
       "resolveJsonModule": true,
-      "outDir": "build",
+      "outDir": "./build",
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "strict": true,
