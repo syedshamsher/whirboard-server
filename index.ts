@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const http = require("http");
 const app = express();
 const server = http.createServer(app);
+const PORT = process.env.PORT;
 
 import { Server } from "socket.io";
-import config from "./config.json";
 import { DrawLineProps } from "./types";
 import { Users } from "./interface";
 
@@ -50,6 +51,6 @@ io.on("connection", (socket) => {
   socket.on("clear", () => io.emit("clear"));
 });
 
-server.listen(config?.port || 3001, () => {
-  console.log(`✔️ Server listening on port ${config?.port || 3001}`);
+server.listen(PORT || 3001, () => {
+  console.log(`✔️ Server listening on port ${PORT || 3001}`);
 });
